@@ -38,6 +38,7 @@ const projectIdCounter = 1
   }
   const showTasks = (project) => {
       tabFactory(container).appendChild(project);
+      
       // console.log(project);
   };
  const addTab = (ul, title) => {
@@ -88,6 +89,14 @@ SaveProjectButton.addEventListener('click',function() {
   x.style.display = 'none'
 
 });
+
+
+function Project(title, description){
+  this.projectId = projectIdCounter + 1,
+  this.projectTitle = title,
+  this.projectDescription = description,
+  this.projectTask = []
+}
 
 
 function task(title, description, dueDate, priority) {
