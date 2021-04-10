@@ -33,13 +33,11 @@ const projectIdCounter = 1
     if (projectTitle == project.projectTitle) {
         return project
     }
-    // addTabNavbar(project.projectTitle) 
   }
   }
   const showTasks = (project) => {
       tabFactory(container).appendChild(project);
-      
-      // console.log(project);
+
   };
  const addTab = (ul, title) => {
   const li = document.createElement('li');
@@ -62,8 +60,8 @@ const populateNavbar = (todos) => {
     addTabNavbar(project.projectTitle) 
   }
 }
-const AddBookButton = document.querySelector('#create_new_project');
-AddBookButton.addEventListener('click',function() {
+const AddProjectButton = document.querySelector('#create_new_project');
+AddProjectButton.addEventListener('click',function() {
   const x = document.getElementById('myDIV');
   if (x.style.display === 'none') {
     x.style.display = 'block';
@@ -98,13 +96,6 @@ function Project(title, description){
   this.projectTask = []
 }
 
-
-function task(title, description, dueDate, priority) {
-  this.title = title;
-  this.description = description;
-  this.dueDate = dueDate;
-  this.priority = priority;
-}
   const run = () => {
     // addTabNavbar('Movies');
     populateNavbar(todos)
