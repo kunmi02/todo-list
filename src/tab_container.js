@@ -37,66 +37,96 @@ const tabFactory = (container) => {
     container.appendChild(TaskDueDate);
   };
 
-  const showCreateTaskButton = () =>{
+  const showCreateTaskButton = (obj) =>{
     AddTaskButton.addEventListener('click',function() {
-      const x = document.getElementById('myTask');
-        x.style.display = 'block';
+      createTaskForm(obj)
         AddTaskButton.style.display = 'none'
     });
+    
     container.appendChild(document.createElement('br'));
-      container.appendChild(document.createElement('br'));
-  
-      const x = document.getElementById('myTask');
-  
-      container.appendChild(AddTaskButton);
-  
-      const closeButton = document.querySelector('#close_task_pane');
-      closeButton.addEventListener('click',function(){
-        x.style.display = 'none';
-        AddTaskButton.style.display = 'block'
-      })  
+    container.appendChild(document.createElement('br'));
+    container.appendChild(AddTaskButton);
   }
 
-    const createTask = (obj) => {
-      const createNewTaskButton = document.querySelector('#add_task_to_project');
-      createNewTaskButton.addEventListener('click', function(){
-            const title = document.getElementById('title').value;
-      const due_date = document.getElementById('due_date').value;
-      const prority = document.getElementById('priority').value;
-      const description = document.getElementById('description').value;
-        if ((title === '') || (due_date === '') || (prority === '') || (description === '')) {
-        alert('Fill in the empty field');
-        return;
-        }
-        const NewTask = new task(title, due_date, prority, description);
+    const createTaskForm = (obj) => {
+      const previous_form = container.querySelector('form')
+      if (previous_form) previous_form.remove() 
+      const form =document.createElement('form')
+      form.appendChild(document.createElement('br'));
+      form.appendChild(document.createElement('br'));
+      const x = document.createElement("LABEL");
+      const t = document.createTextNode("Task Title: ");
+      x.setAttribute("for", "male");
+      x.appendChild(t);
+      form.append(x)
+      const title = document.createElement("INPUT");
+      title.setAttribute("type", "text");
+      form.appendChild(title);
+
+      form.appendChild(document.createElement('br'));
+      form.appendChild(document.createElement('br'));
+      const x1 = document.createElement("LABEL");
+      const t1 = document.createTextNode("Description: ");
+      // x1.setAttribute("for", "male");
+      x1.appendChild(t1);
+      form.append(x1)
+      const description = document.createElement("INPUT");
+      description.setAttribute("type", "text");
+      form.appendChild(description);
+
+      form.appendChild(document.createElement('br'));
+      form.appendChild(document.createElement('br'));
+      const x2 = document.createElement("LABEL");
+      const t2 = document.createTextNode("Due Date: ");
+      // x2.setAttribute("for", "male");
+      x2.appendChild(t2);
+      form.append(x2)
+      const due_date = document.createElement("INPUT");
+      due_date.setAttribute("type", "text");
+      form.appendChild(due_date);
+      
+      form.appendChild(document.createElement('br'));
+      form.appendChild(document.createElement('br'));
+      const x3 = document.createElement("LABEL");
+      const t3 = document.createTextNode("Priority ");
+      // x3.setAttribute("for", "male");
+      x3.appendChild(t3);
+      form.append(x3)
+      const priority = document.createElement("INPUT");
+      priority.setAttribute("type", "text");
+      form.appendChild(priority);
+
+      form.appendChild(document.createElement('br'));
+      form.appendChild(document.createElement('br'));
+
+      const SaveTaskButton = document.createElement('button');
+      SaveTaskButton.innerHTML = 'Save Task'
+      SaveTaskButton.setAttribute("type", "submit")
+      form.addEventListener('submit', function(){
+          const NewTask = new task(title.value, description.value, due_date.value, priority.value);
         obj.push(NewTask);
-      // alert('New task added')
-      const x = document.getElementById('myTask');
-      document.getElementById('title').value = '';
-      document.getElementById('due_date').value = '';
-      document.getElementById('priority').value = '';
-      document.getElementById('description').value = '';
-      x.style.display = 'none';
-      alert('New Task created successfully')
-      obj.forEach(element => {
+      alert('New task added')
+      showTaskInProject({projectTask:obj})
+      AddTaskButton.style.display = 'block'
+        })
+       
+        form.appendChild(SaveTaskButton)
+        container.appendChild(form)
+        
+    }
+
+    const showTaskInProject = (project) => {
+      console.log(container)
+      container.innerHTML = '';
+      showCreateTaskButton(project.projectTask)
+      project.projectTask.forEach(element => {
         displayTasks(element);
       });
-      AddTaskButton.style.display = 'block'
-      })
     }
 
   const appendChild = (obj) => {
-    container.innerHTML = '';
-    showCreateTaskButton()
-    createTask(obj.projectTask)
-    
-    obj.projectTask.forEach(element => {
-      displayTasks(element);
-    });
-
-    
+    showTaskInProject(obj) 
   };
-  
 
   return { appendChild };
 };
