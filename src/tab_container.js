@@ -6,9 +6,9 @@ const tabFactory = (container) => {
     container.appendChild(h1);
   };
 
-  const taskId = 1
+  const taskId = 0
   function task(title, description, dueDate, priority) {
-    this.taskId = taskId;
+    this.taskId = taskId + 1;
     this.taskTitle = title;
     this.taskDescription = description;
     this.TaskDueDate = dueDate;
@@ -17,7 +17,7 @@ const tabFactory = (container) => {
   const AddTaskButton = document.createElement('button');
   AddTaskButton.innerHTML = 'Create Task'
 
-  const displayTasks = (content) => {
+  const displayTasks = (project, content) => {
     const h4 = document.createElement('h4');
     h4.textContent = content.taskTitle;
     container.appendChild(h4);
@@ -35,7 +35,36 @@ const tabFactory = (container) => {
     const TaskDueDate = document.createElement('span');
     TaskDueDate.textContent = content.TaskDueDate;
     container.appendChild(TaskDueDate);
+    const DeleteButton = document.createElement('button')
+    DeleteButton.innerHTML = 'Delete Task'
+    container.appendChild(DeleteButton);
+    DeleteButton.addEventListener('click', function(){
+      const deleted_task =
+      DeleteTask(project, content.taskId)
+        // alert('Task has been deleted')
+        // console.log(deleted_task)
+        showTaskInProject(deleted_task)
+    })
   };
+
+  const DeleteTask = (project, taskID) =>{
+    // console.log(taskID)
+    // console.log(project)
+    const tasks = project.projectTask
+    console.log(tasks)
+    for (let i = 0; i < tasks.length; i++) {
+      const task = tasks[i]
+      
+      // console.log(task)
+      if (taskID == task.taskId) {
+        // console.log('!!!!!')
+        tasks.splice(i, 1)
+        // console.log(tasks)
+          return project
+          
+      }
+    }
+  }
 
   const showCreateTaskButton = (obj) =>{
     AddTaskButton.addEventListener('click',function() {
@@ -103,11 +132,17 @@ const tabFactory = (container) => {
       SaveTaskButton.innerHTML = 'Save Task'
       SaveTaskButton.setAttribute("type", "submit")
       form.addEventListener('submit', function(){
+        if ((title.value === '') || (description.value === '') || (due_date.value === '') || (priority.value === '')) {
+          alert('All fields are neccessary');
+          createTaskForm(obj)
+        }else{
           const NewTask = new task(title.value, description.value, due_date.value, priority.value);
         obj.push(NewTask);
       alert('New task added')
       showTaskInProject({projectTask:obj})
       AddTaskButton.style.display = 'block'
+
+        }
         })
        
         form.appendChild(SaveTaskButton)
@@ -116,11 +151,10 @@ const tabFactory = (container) => {
     }
 
     const showTaskInProject = (project) => {
-      console.log(container)
       container.innerHTML = '';
       showCreateTaskButton(project.projectTask)
       project.projectTask.forEach(element => {
-        displayTasks(element);
+        displayTasks(project, element);
       });
     }
 

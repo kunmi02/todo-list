@@ -1,6 +1,6 @@
 import checkLocalStorage from './checkLocalStorage';
 import tabFactory from './tab_container';
-
+import "./styles.css";
 const projectIdCounter = 1
  const todos = [
    {
@@ -9,14 +9,14 @@ const projectIdCounter = 1
      projectDescription: 'Here is my test project description',
      projectTask: [
        {
-         taskId: 1,
+         taskId: 'a1',
          taskTitle: 'Test task1 for Test project',
          taskDescription: 'Test task description for test project',
          TaskDueDate: '1/2/3',
          TaskPriority: 'medium'
        },
        {
-        taskId: 2,
+        taskId: 'a2',
         taskTitle: 'Test task2 for Test project',
         taskDescription: 'Test task description for test project',
         TaskDueDate: '1/2/3',
@@ -97,10 +97,7 @@ function Project(title, description){
 }
 
   const run = () => {
-    // addTabNavbar('Movies');
     populateNavbar(todos)
-    // createMenuButtons();
-    // createNewProject()
   };
   return { run };
 }
