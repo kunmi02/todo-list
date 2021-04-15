@@ -30,14 +30,15 @@ const ttodos = [
 localStorage.setItem('todos', JSON.stringify(ttodos));
 
 const toddos = JSON.parse(localStorage.getItem('todos') || '[]');
+// console.log(toddos)
 
-const todos = toddos;
+const todos = ttodos;
 
 const mainPage = (container) => {
   function getProject(projectTitle) {
     let i = 0;
     let project = '';
-    for (i = 0; i < todos.length; i + 1) {
+    for (i = 0; i < todos.length; i+=1) {
       project = todos[i];
       if (projectTitle === project.projectTitle) {
         // return project;
@@ -65,7 +66,7 @@ const mainPage = (container) => {
 
   const populateNavbar = (todos) => {
     let i = 0;
-    for (i = 0; i < todos.length; i + 1) {
+    for (i = 0; i < todos.length; i+=1) {
       const project = todos[i];
       addTabNavbar(project.projectTitle);
     }
