@@ -27,11 +27,11 @@ const ttodos = [
   },
 ];
 
-localStorage.setItem("todos", JSON.stringify(ttodos));
+localStorage.setItem('todos', JSON.stringify(ttodos));
 
-const toddos = JSON.parse(localStorage.getItem("todos") || "[]");
+const toddos = JSON.parse(localStorage.getItem('todos') || '[]');
 
-const todos = toddos
+const todos = toddos;
 
 const mainPage = (container) => {
   function getProject(projectTitle) {
