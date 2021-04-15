@@ -1,6 +1,8 @@
-# Book Library
+# TODO LIST
 
-![microverse](https://camo.githubusercontent.com/3a5835d4f56c57cec85939ac345e43fef164c178/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d6963726f76657273652d626c756576696f6c6574)
+This project is to showcase my knowledge on webpack. It allows users to add task, delete and edit tasks.
+Users can create new projects and update these projects with tasks
+<!-- ![microverse](https://camo.githubusercontent.com/3a5835d4f56c57cec85939ac345e43fef164c178/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d6963726f76657273652d626c756576696f6c6574) -->
 
 ## Screenshot
 
@@ -11,7 +13,7 @@
 A simple JS based App for restaurant app.
 
 ## Setup
-- Clone the project by running `git clone https://github.com/kunmi02/restaurant-page.git` on terminal or CMD
+- Clone the project by running `git clone https://github.com/kunmi02/todo-list.git` on terminal or CMD
 - Run terminal or CMD from the project directory.
 -  Run `npm install`. If you do not have `npm` installed you can get it from [here](https://www.npmjs.com/).
 - Run `npm start` to lauch a local web server and open a tab in you Browser with the page.
@@ -24,9 +26,11 @@ A simple JS based App for restaurant app.
 - JS
 - VScode
 - Webpack
+- LocalStorage
 
 ## Demo Link
- http://akinkunmi.me/restaurant-page/
+ <!-- http://akinkunmi.me/restaurant-page/ -->
+ No Demo Available yet
 
 ## Contributing
 
