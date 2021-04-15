@@ -10,10 +10,10 @@ const projectIdCounter = 1
      projectTask: [
        {
          taskId: 'a1',
-         taskTitle: 'Test task1 for Test project',
-         taskDescription: 'Test task description for test project',
-         TaskDueDate: '1/2/3',
-         TaskPriority: 'medium'
+         taskTitle: 'First Project',
+         taskDescription: 'First Project description ',
+         TaskDueDate: '1/1/1',
+         TaskPriority: 'high'
        },
        {
         taskId: 'a2',
