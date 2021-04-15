@@ -108,7 +108,7 @@ const tabFactory = (container) => {
     let editedTask = '';
     let task = '';
     let taskToBeEdited = '';
-    for (let i = 0; i < tasks.length; i+=1) {
+    for (let i = 0; i < tasks.length; i += 1) {
       task = tasks[i];
       if (taskID === task.taskId) {
         taskToBeEdited = tasks[i];
@@ -134,7 +134,7 @@ const tabFactory = (container) => {
 
   const DeleteTask = (project, taskID) => {
     const tasks = project.projectTask;
-    for (let i = 0; i < tasks.length; i+=1) {
+    for (let i = 0; i < tasks.length; i += 1) {
       const task = tasks[i];
       if (taskID === task.taskId) {
         tasks.splice(i, 1);
