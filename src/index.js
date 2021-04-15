@@ -3,7 +3,7 @@ import tabFactory from './tab_container';
 import './styles.css';
 
 const projectIdCounter = 1;
-const todos = [
+const ttodos = [
   {
     projectId: 1,
     projectTitle: 'Test project',
@@ -26,6 +26,13 @@ const todos = [
     ],
   },
 ];
+
+localStorage.setItem("todos", JSON.stringify(ttodos));
+
+const toddos = JSON.parse(localStorage.getItem("todos") || "[]");
+
+const todos = toddos
+
 const mainPage = (container) => {
   function getProject(projectTitle) {
     let i = 0;
@@ -104,5 +111,4 @@ const mainPage = (container) => {
   return { run };
 };
 
-// checkLocalStorage()
 mainPage(document.querySelector('#content')).run();
