@@ -30,7 +30,6 @@ const ttodos = [
 localStorage.setItem('todos', JSON.stringify(ttodos));
 
 const toddos = JSON.parse(localStorage.getItem('todos') || '[]');
-// console.log(toddos)
 
 const todos = ttodos;
 
@@ -41,7 +40,6 @@ const mainPage = (container) => {
     for (i = 0; i < todos.length; i += 1) {
       project = todos[i];
       if (projectTitle === project.projectTitle) {
-        // return project;
         break;
       }
     }

@@ -2,15 +2,20 @@
 
 This project is to showcase my knowledge on webpack. It allows users to add task, delete and edit tasks.
 Users can create new projects and update these projects with tasks
-<!-- ![microverse](https://camo.githubusercontent.com/3a5835d4f56c57cec85939ac345e43fef164c178/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d6963726f76657273652d626c756576696f6c6574) -->
+![microverse](https://camo.githubusercontent.com/3a5835d4f56c57cec85939ac345e43fef164c178/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d6963726f76657273652d626c756576696f6c6574)
 
 ## Screenshot
 
+TODO List Landing Page
+
 ![Screenshot of the Book Library](src/assets/home.png)
+
+TODO List Project Creation View
+![Screenshot of the Book Library](src/assets/create_project.png)
 
 ## Description
 
-A simple JS based App for restaurant app.
+A simple JS based App for todo list app.
 
 ## Setup
 - Clone the project by running `git clone https://github.com/kunmi02/todo-list.git` on terminal or CMD
@@ -29,8 +34,7 @@ A simple JS based App for restaurant app.
 - LocalStorage
 
 ## Demo Link
- <!-- http://akinkunmi.me/restaurant-page/ -->
- No Demo Available yet
+ http://akinkunmi.me/todo-list/
 
 ## Contributing
 
