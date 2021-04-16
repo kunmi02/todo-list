@@ -1,20 +1,9 @@
 import todos from './index';
+import Task from './modules/todo';
+import operations from './modules/todo_operations'
 
 const tabFactory = (container) => {
-  const addTitle = (projectTitle) => {
-    const h1 = document.createElement('h2');
-    h1.textContent = projectTitle;
-    container.appendChild(h1);
-  };
 
-  const taskId = 0;
-  function Task(title, description, dueDate, priority) {
-    this.taskId = taskId + 1;
-    this.taskTitle = title;
-    this.taskDescription = description;
-    this.TaskDueDate = dueDate;
-    this.TaskPriority = priority;
-  }
   const AddTaskButton = document.createElement('button');
   AddTaskButton.innerHTML = 'Create Task';
 
@@ -43,16 +32,18 @@ const tabFactory = (container) => {
     EditButton.innerHTML = 'Edit Task';
     container.appendChild(EditButton);
     EditButton.addEventListener('click', () => {
-      const editedTask = EditTask(project, content.taskId);
+      EditTask(project, content.taskId);
     });
 
     const DeleteButton = document.createElement('button');
     DeleteButton.innerHTML = 'Delete Task';
     container.appendChild(DeleteButton);
     DeleteButton.addEventListener('click', () => {
-      const deletedTask = DeleteTask(project, content.taskId);
+      const deletedTask = 
+      operations.deleteTask(project, content.taskId);
       showTaskInProject(deletedTask);
     });
+    
   };
 
   const EditTask = (project, taskID) => {
@@ -132,17 +123,6 @@ const tabFactory = (container) => {
     }
   };
 
-  const DeleteTask = (project, taskID) => {
-    const tasks = project.projectTask;
-    for (let i = 0; i < tasks.length; i += 1) {
-      const task = tasks[i];
-      if (taskID === task.taskId) {
-        tasks.splice(i, 1);
-        break;
-      }
-    }
-    return project;
-  };
 
   const showCreateTaskButton = (obj) => {
     AddTaskButton.addEventListener('click', () => {

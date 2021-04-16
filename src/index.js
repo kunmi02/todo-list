@@ -1,8 +1,8 @@
 import checkLocalStorage from './checkLocalStorage';
 import tabFactory from './tab_container';
+import Project from './modules/project';
 import './styles.css';
 
-const projectIdCounter = 1;
 const ttodos = [
   {
     projectId: 1,
@@ -96,13 +96,6 @@ const mainPage = (container) => {
     x.style.display = 'none';
   });
 
-
-  function Project(title, description) {
-    this.projectId = (projectIdCounter + 1);
-    this.projectTitle = title;
-    this.projectDescription = description;
-    this.projectTask = [];
-  }
 
   const run = () => {
     populateNavbar(todos);
