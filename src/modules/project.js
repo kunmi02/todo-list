@@ -6,6 +6,6 @@ function Project(title, description) {
   this.projectTitle = title;
   this.projectDescription = description;
   this.projectTask = [];
-} 
+}
 
 export default Project;

@@ -1,9 +1,8 @@
 import todos from './index';
 import Task from './modules/todo';
-import operations from './modules/todo_operations'
+import operations from './modules/todo_operations';
 
 const tabFactory = (container) => {
-
   const AddTaskButton = document.createElement('button');
   AddTaskButton.innerHTML = 'Create Task';
 
@@ -39,11 +38,9 @@ const tabFactory = (container) => {
     DeleteButton.innerHTML = 'Delete Task';
     container.appendChild(DeleteButton);
     DeleteButton.addEventListener('click', () => {
-      const deletedTask = 
-      operations.deleteTask(project, content.taskId);
+      const deletedTask = operations.deleteTask(project, content.taskId);
       showTaskInProject(deletedTask);
     });
-    
   };
 
   const EditTask = (project, taskID) => {
