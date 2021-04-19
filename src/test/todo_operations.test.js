@@ -1,6 +1,5 @@
 import Project from '../modules/project';
 import Task from '../modules/todo';
-// import operations from './modules/todo_operations';
 
 test('should create a new task object ', () => {
   const project = new Project('Test Project', 'My description');
