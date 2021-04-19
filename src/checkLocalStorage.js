@@ -23,10 +23,9 @@ function storageAvailable(type) {
 }
 const checkLocalStorage = () => {
   if (storageAvailable('localStorage')) {
-    alert('Yippee! We can use localStorage awesomeness');
-  } else {
-    alert('Too bad, no localStorage for us');
+    return ('Yippee! We can use localStorage awesomeness');
   }
+  return ('Too bad, no localStorage for us');
 };
 
 export { checkLocalStorage as default };

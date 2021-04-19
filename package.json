@@ -4,7 +4,7 @@
   "description": "![microverse](https://camo.githubusercontent.com/3a5835d4f56c57cec85939ac345e43fef164c178/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d6963726f76657273652d626c756576696f6c6574)",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "webpack --mode=development",
     "build": "webpack --mode=production",
     "start": "npm run open",
@@ -13,13 +13,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/preset-env": "^7.13.15",
     "css-loader": "^5.2.0",
+    "jest": "^26.6.3",
     "style-loader": "^2.0.0",
     "webpack": "^5.30.0",
     "webpack-cli": "^4.6.0"
   },
   "dependencies": {
     "babel-eslint": "10.1.x",
+    "babel-jest": "^26.6.3",
     "bootstrap": "^4.6.0",
     "concurrently": "^6.0.0",
     "cssnano": "^4.1.10",
@@ -38,6 +41,7 @@
     "stylelint-config-standard": "20.0.x",
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "3.17.x",
+    "ts-jest": "^26.5.5",
     "ts-loader": "^8.1.0",
     "uuid": "^3.4.0",
     "webpack": "^5.28.0",
